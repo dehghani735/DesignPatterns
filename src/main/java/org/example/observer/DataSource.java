@@ -1,6 +1,6 @@
 package org.example.observer;
 
-public class DataSource {
+public class DataSource extends Subject {
 
     private int value;
 
@@ -10,5 +10,6 @@ public class DataSource {
 
     public void setValue(int value) {
         this.value = value;
+        notifyObservers();
     }
 }
