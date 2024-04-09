@@ -10,9 +10,19 @@ package org.example.bridge;
 //     SonyAdvancedRemoteControl
 
 // 2 types of remote controls -> 2 new classes
-public abstract class RemoteControl {
-    public abstract void turnOn();
+public class RemoteControl {
+    protected Device device;
 
-    public abstract void turnOff();
+    public RemoteControl(Device device) {
+        this.device = device;
+    }
+
+    public void turnOn() {
+        device.turnOn();
+    }
+
+    public void turnOff() {
+        device.turnOff();
+    }
 
 }

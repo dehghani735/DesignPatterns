@@ -1,7 +1,12 @@
 package org.example.bridge;
 
-public abstract class AdvancedRemoteControl extends RemoteControl {
+public class AdvancedRemoteControl extends RemoteControl {
+    public AdvancedRemoteControl(Device device) {
+        super(device);
+    }
 
-    public abstract void setChannel(int number);
+    public void setChannel(int number) {
+        device.setChannel(number);
+    }
 
 }
