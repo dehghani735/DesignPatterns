@@ -14,6 +14,5 @@ public class SamsungTV implements Device {
     @Override
     public void setChannel(int number) {
         System.out.println("Samsung: setChannel");
-
     }
 }
