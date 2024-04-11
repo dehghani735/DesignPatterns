@@ -10,15 +10,11 @@ public class Presentation {
         slides.add(slide);
     }
 
-    public void export(PresentationFormat format) {
-        if (format == PresentationFormat.PDF) {
-            var pdf = new PdfDocument();
-            for (var slide : slides)
-                pdf.addPage(slide.getText());
-        } else if (format == PresentationFormat.MOVIE) {
-            var movie = new Movie();
-            for (var slide: slides)
-                movie.addFrame(slide.getText(), 3);
-        }
+    // we have a single place where we have implemented the exporting logic. if we want to change this logic in the future
+    // this is the only place we have to modify
+    public void export(PresentationBuilder builder) {
+        builder.addSlide(new Slide("Copyright"));
+        for (Slide slide : slides)
+            builder.addSlide(slide);
     }
 }
