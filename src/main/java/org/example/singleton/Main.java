@@ -2,10 +2,10 @@ package org.example.singleton;
 
 public class Main {
     public static void main(String[] args) {
-        ConfigManager manager = new ConfigManager();
+        ConfigManager manager = ConfigManager.getInstance();
         manager.set("name", "Mosh");
 
-        ConfigManager other = new ConfigManager();
+        ConfigManager other = ConfigManager.getInstance();
         System.out.println(other.get("name"));
     }
 }
